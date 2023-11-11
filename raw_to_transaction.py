@@ -1,0 +1,4 @@
+from eth_account._utils.typed_transactions import (TypedTransaction)
+from hexbytes import HexBytes
+
+print(TypedTransaction.from_bytes(HexBytes('0x02f8710118839896808507ed3437908252089464bda0a47b91da383c60f02290678033266427ba8718de76816d800080c001a06152c61fadcba9fff2fe863740eaece160d7e3047814d6f4deffb662875c365fa034f731fca8ab7a9cb4c3c8909a663186004b0fc6798d5cfb034c9e69862021f2')).as_dict())
