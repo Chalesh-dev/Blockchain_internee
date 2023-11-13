@@ -1,0 +1,16 @@
+1. eth ->
+2. smart contract ->["interaction":"users using smart contract", "execution": "deploying smart contract"]
+3. data(oracle)
+4. token
+5. swap/dex (uniswap, 1inch, kyber, compound, sushiswap, shiba swap, ...)
+6. lend/loan (compound,uniswap,balancer, 1inch)
+7. borrow (compound)
+8. nft (skip)
+
+
+(evm) -> (yul(asm), vyper(python), solidity(JS),rust)
+
+95 -> solidity/ solidity/yul
+4  -> vyper
+1 -> rust/others
+
