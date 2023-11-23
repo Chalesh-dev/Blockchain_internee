@@ -9,6 +9,7 @@ from web3 import Web3
 from web3.auto import w3
 
 
+
 class Transaction(rlp.Serializable):
     fields = [
         ("nonce", big_endian_int),

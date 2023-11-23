@@ -89,6 +89,41 @@ contract sandoogh is Owner{
 }
 
 contract NFT is Owner {
-    mapping
+
+    mapping(unit16 => address) public ownerNFT;
+    mapping(uint16 => uint256) public nftSellPrice;
+
+
+    unit16 public constant MAX_NFT = 10;
+    unit256 public nftprice = 1 ether ;
+
+    event NFTclaimed(address index nOwner ,unit16 indexed tokenid)
+
+    modifier enoughMoney(){
+        require(msg.sender.balance >= nftprice,"insufficient funds to claim NFT");
+        _;
+    }
+
+
+
+    function buyNFT(uint8 _id) public payable enoughMoney() {
+        payable(address(this)).transfer(nftprice);
+        ownedNFT[_id] = msg.sender;
+    }
+
+    function transferNFT(uint _id,address _reciever) public {
+        require(ownerNFT[_id] == msg.sender);
+        ownerNFT(_id) = _reciever;
+    }
+
+    function prepareForSellNFT(uint8 _id,uint _price){
+        require(ownerNFT[_id] == msg.sender);
+        nftSellPrice[_id] = _price;
+    }
+
+    function buyNftFromReseller() {
+    }
+
+
 
 }
