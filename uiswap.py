@@ -20,7 +20,7 @@ def get_uni(token_1, token_2):
 
 
 def exchange_rate(pool_address,token1, token2):
-    pool_abi = [......]
+
     pool_contract = w3.eth.contract(address=pool_address , abi=pool_abi)
     reserves = pool_contract.functions.getReserves().call()
     reserve_token1 , reserve_token2 = reserves[0] , reserves[1]
